@@ -1,9 +1,9 @@
 "use client";
 
-import { Button } from "./ui/Button";
-import { PlayIcon } from "lucide-react";
 import { useUrlParams } from "@/hooks/useUrlParams";
 import { PARAM_SEASON_NAME } from "@/lib/constants";
+import { PlayIcon } from "lucide-react";
+import { Button } from "./ui/Button";
 
 export const ShowPlayButton = () => {
   const { searchParams } = useUrlParams();
@@ -16,7 +16,7 @@ export const ShowPlayButton = () => {
       className="shadow-[0_0_5px_2px_rgb(21,201,147)] font-bold"
     >
       <PlayIcon className="size-5 fill-white" />
-      Iniciar Temporada {currentSeason}
+      Assistir Temporada {currentSeason}
     </Button>
   );
 };
