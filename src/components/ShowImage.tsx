@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import getShow from "../services/getShow";
 
@@ -9,7 +8,7 @@ export const ShowImage = async () => {
     <Image
       src={show?.Images.Background}
       alt="Video background"
-      className="h-full w-full object-cover object-center opacity-40"
+      className="h-full w-full object-cover object-top opacity-40"
       fetchPriority="high"
       priority
       fill

@@ -1,203 +1,39 @@
-'use client'
-
-import { Suspense, useState } from "react";
+import { ShowContent } from "@/components/ShowContent";
+import { Suspense } from "react";
 import { ShowImage } from "../components/ShowImage";
-import { Button } from "../components/ui/button";
-import { InfoIcon, PlayIcon, StarIcon, XIcon } from 'lucide-react'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
-import { ScrollArea } from "../components/ui/scroll-area";
-
-const episodes = [
-  {
-    id: 1,
-    title: "Despertar das Sombras",
-    duration: "52 min",
-    synopsis:
-      "Uma misteriosa presença começa a assombrar a cidade. O grupo descobre pistas sobre um antigo ritual.",
-  },
-  {
-    id: 2,
-    title: "Pacto Silencioso",
-    duration: "48 min",
-    synopsis:
-      "Segredos do passado vêm à tona quando um acordo esquecido é revelado.",
-  },
-  {
-    id: 3,
-    title: "O Ritual",
-    duration: "55 min",
-    synopsis:
-      "A equipe tenta realizar um contra-ritual para impedir a ameaça crescente.",
-  },
-  {
-    id: 4,
-    title: "Laços de Sangue",
-    duration: "50 min",
-    synopsis:
-      "Conexões familiares revelam verdades surpreendentes sobre as origens do mal.",
-  },
-  {
-    id: 5,
-    title: "Entre Mundos",
-    duration: "53 min",
-    synopsis:
-      "A fronteira entre realidade e o desconhecido começa a se dissolver.",
-  },
-  {
-    id: 6,
-    title: "A Possessão",
-    duration: "51 min",
-    synopsis:
-      "Um dos personagens principais enfrenta uma transformação aterrorizante.",
-  },
-  {
-    id: 7,
-    title: "Segredos Revelados",
-    duration: "54 min",
-    synopsis:
-      "Todas as peças do quebra-cabeça começam a se encaixar de forma chocante.",
-  },
-  {
-    id: 8,
-    title: "O Confronto Final",
-    duration: "62 min",
-    synopsis:
-      "A batalha decisiva entre luz e trevas chega ao seu clímax emocionante.",
-  },
-];
-
-const cast = [
-  {
-    id: 1,
-    name: "Ana Silva",
-    character: "Protagonista",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=400&fit=crop",
-  },
-  {
-    id: 2,
-    name: "Carlos Mendes",
-    character: "Antagonista",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop",
-  },
-  {
-    id: 3,
-    name: "Marina Costa",
-    character: "Aliada",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=400&fit=crop",
-  },
-  {
-    id: 4,
-    name: "Pedro Santos",
-    character: "Mentor",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=400&fit=crop",
-  },
-];
 
 export default function Home() {
-  const [selectedSeason, setSelectedSeason] = useState("1");
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const seasons = ["1", "2", "3"];
-
   return (
     <main className="min-h-screen bg-dark-one">
-      {/* Video Container */}
       <div className="relative h-[60vh] w-full overflow-hidden">
-        {/* Background Video Placeholder */}
         <section className="absolute inset-0 bg-linear-to-br from-dark-one via-dark-two to-dark-three">
-          {/* <Suspense fallback={<p>teste</p>}>
+          <Suspense fallback={<p>Loading...</p>}>
+            {/* TODO: Add skeleton loading */}
             <ShowImage />
-          
-          </Suspense> */}
+          </Suspense>
         </section>
 
         {/* Overlay Gradient */}
         <div className="absolute inset-0 bg-linear-to-t from-dark-one via-dark-two/60 to-transparent" />
 
         {/* Close Button */}
-        <Button
+        {/* <Button
           variant="ghost"
           size="icon"
           className="absolute right-4 top-4 z-10 bg-dark-one/20 backdrop-blur-sm hover:bg-dark-one/40 transition-smooth"
         >
           <XIcon className="h-6 w-6" />
-        </Button>
+        </Button> */}
 
         {/* Content Overlay */}
-        <div className="absolute bottom-0 left-0 right-0 p-8 animate-fade-in">
-          <div className="max-w-7xl mx-auto">
-            <div className="space-y-4">
-              <h1 className="text-5xl font-bold tracking-tight text-title">
-                {/* {showData?.Title} */}
-              </h1>
-
-              <ul className="flex flex-row items-center">
-                {/* {showData?.Genres?.map((genre, index) => (
-                  <li
-                    key={genre.ID}
-                    className="text-description uppercase font-medium"
-                  >
-                    {genre.Title}
-                    {index < (showData.Genres?.length || 0) - 1 && (
-                      <span className="mx-2">•</span>
-                    )}
-                  </li>
-                ))} */}
-                {/* <li className="text-description uppercase font-medium ml-2">
-                  - {showData?.Year}
-                </li> */}
-              </ul>
-
-              {/* <p className="max-w-2xl text-title/90 leading-relaxed">
-                {showData?.Synopsis}
-              </p> */}
-
-              <div className="flex gap-3 pt-2">
-                <Button
-                  size="lg"
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-glow transition-smooth"
-                  onClick={() => setIsPlaying(!isPlaying)}
-                >
-                  <PlayIcon className="h-5 w-5 mr-2 fill-accent-foreground" />
-                  Assistir
-                </Button>
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="bg-secondary/50 hover:bg-secondary backdrop-blur-sm transition-smooth"
-                >
-                  <InfoIcon className="h-5 w-5 mr-2" />
-                  Mais Info
-                </Button>
-              </div>
-
-              {/* Season Tabs */}
-              <div className="flex gap-2 pt-2">
-                {seasons.map((season) => (
-                  <button
-                    key={season}
-                    onClick={() => setSelectedSeason(season)}
-                    className={`px-6 py-2 rounded-lg font-medium transition-smooth ${
-                      selectedSeason === season
-                        ? "bg-accent text-accent-foreground shadow-glow"
-                        : "bg-secondary/50 text-muted-foreground hover:bg-secondary backdrop-blur-sm"
-                    }`}
-                  >
-                    Temporada {season}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <Suspense fallback={<p>loading ...</p>}>
+          {/* TODO: Add skeleton loading */}
+          <ShowContent />
+        </Suspense>
       </div>
+      <div className="max-w-7xl mx-auto py-8 text-white">Cada episódio entra aqui</div>
 
-      {/* Content Section */}
-      <div className="max-w-7xl mx-auto px-8 py-8">
+      {/* <div className="max-w-7xl mx-auto px-8 py-8">
         <Tabs defaultValue="episodes" className="w-full">
           <TabsList className="bg-secondary/50 backdrop-blur-sm mb-6">
             <TabsTrigger
@@ -342,7 +178,7 @@ export default function Home() {
             </div>
           </TabsContent>
         </Tabs>
-      </div>
+      </div> */}
     </main>
   );
 }
