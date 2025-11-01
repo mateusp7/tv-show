@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, within } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { ShowContent } from "./ShowContent";
 import type { Cast } from "@/entities/cast.type";
 import type { Genres } from "@/entities/genres.type";

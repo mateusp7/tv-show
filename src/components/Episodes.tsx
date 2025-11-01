@@ -21,6 +21,7 @@ export const Episodes = ({ episodes }: { episodes: Episode[] }) => {
       initial="hidden"
       animate="show"
       className="space-y-3"
+      data-testid="episodes-container"
     >
       {episodes.map((episode) => (
         <EpisodeItem

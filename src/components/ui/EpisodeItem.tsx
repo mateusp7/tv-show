@@ -14,7 +14,7 @@ import { PlayIcon } from "lucide-react";
 import Image from "next/image";
 import { Button } from "./Button";
 
-interface IEpisodeItemProps {
+export interface IEpisodeItemProps {
   episodeNumber: number;
   title: string;
   image: string;
@@ -48,6 +48,7 @@ export const EpisodeItem = ({
           className="flex flex-row cursor-pointer items-center justify-between bg-dark-one py-4 px-6 rounded-md border-2 border-dark-three hover:bg-dark-two transition-discrete duration-300 hover:border-principal group focus-visible:outline-none focus-visible:border-principal min-h-35"
           role="button"
           tabIndex={0}
+          data-testid="elementItem"
         >
           <div className="flex flex-row items-start gap-4">
             <Button
