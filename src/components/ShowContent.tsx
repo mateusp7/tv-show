@@ -21,11 +21,11 @@ export const ShowContent = ({
   synopsis,
 }: IShowContentProps) => {
   return (
-    <article className="absolute bottom-0 left-0 right-0 p-8 animate-fade-in">
+    <article className="absolute bottom-0 left-0 right-0 p-8">
       <section className="max-w-7xl mx-auto flex flex-row flex-wrap gap-4 items-end justify-between">
         <div className="space-y-4">
           <header className="space-y-4">
-            <h1 className="text-5xl font-bold tracking-tight text-title">
+            <h1 className="text-5xl font-bold tracking-tight text-title z-50">
               {title}
             </h1>
             <ShowGenresYear genres={genres} year={year} />

@@ -1,5 +1,5 @@
 import getEpisodes from "@/services/getEpisodes";
-import { EpisodeItem } from "./ui/EpisodeItem";
+import { Episodes } from "./Episodes";
 
 interface IShowEpisodesProps {
   seasonNumber: number;
@@ -16,19 +16,7 @@ export const ShowEpisodes = async ({ seasonNumber }: IShowEpisodesProps) => {
 
   return (
     <section className="max-w-7xl mx-auto pb-8 pt-2 text-white px-8 md:px-0">
-      <ul className="space-y-3">
-        {episodesBySeasonSelected.map((episode) => (
-          <EpisodeItem
-            key={episode.ID}
-            episodeNumber={episode.EpisodeNumber}
-            title={episode.Title}
-            image={episode.Image}
-            duration={episode.Duration}
-            seasonNumber={episode.SeasonNumber}
-            synopsis={episode.Synopsis}
-          />
-        ))}
-      </ul>
+      <Episodes key={seasonNumber} episodes={episodesBySeasonSelected} />
     </section>
   );
 };

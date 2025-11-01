@@ -9,6 +9,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { motion } from "framer-motion";
 import { PlayIcon } from "lucide-react";
 import Image from "next/image";
 import { Button } from "./Button";
@@ -22,6 +23,15 @@ interface IEpisodeItemProps {
   synopsis: string;
 }
 
+const item = {
+  hidden: { opacity: 0, x: -40 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.4 },
+  },
+};
+
 export const EpisodeItem = ({
   title,
   episodeNumber,
@@ -33,8 +43,9 @@ export const EpisodeItem = ({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <li
-          className="flex flex-row cursor-pointer items-center justify-between bg-dark-one py-4 px-6 rounded-md border-2 border-dark-three hover:bg-dark-two transition-discrete duration-300 hover:border-principal group focus-visible:outline-none focus-visible:border-principal min-h-[8.75rem]"
+        <motion.li
+          variants={item}
+          className="flex flex-row cursor-pointer items-center justify-between bg-dark-one py-4 px-6 rounded-md border-2 border-dark-three hover:bg-dark-two transition-discrete duration-300 hover:border-principal group focus-visible:outline-none focus-visible:border-principal min-h-35"
           role="button"
           tabIndex={0}
         >
@@ -72,7 +83,7 @@ export const EpisodeItem = ({
               height={80}
             />
           </div>
-        </li>
+        </motion.li>
       </DialogTrigger>
       <DialogContent className="bg-dark-two border-dark-three border-2 text-title max-w-2xl">
         <DialogHeader>

@@ -19,20 +19,7 @@ export default async function Home({
         <section className="absolute inset-0 bg-linear-to-br from-dark-one via-dark-two to-dark-three">
           <ShowImage image={show?.Images?.Background} />
         </section>
-
-        {/* Overlay Gradient */}
         <div className="absolute inset-0 bg-linear-to-t from-dark-one via-dark-two/60 via-50% to-transparent" />
-
-        {/* Close Button */}
-        {/* <Button
-          variant="ghost"
-          size="icon"
-          className="absolute right-4 top-4 z-10 bg-dark-one/20 backdrop-blur-sm hover:bg-dark-one/40 transition-smooth"
-        >
-          <XIcon className="h-6 w-6" />
-        </Button> */}
-
-        {/* Content Overlay */}
         <ShowContent
           genres={show.Genres}
           synopsis={show.Synopsis}
