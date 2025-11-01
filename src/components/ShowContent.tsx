@@ -1,5 +1,6 @@
 import { Cast } from "@/entities/cast.type";
 import { Genres } from "@/entities/genres.type";
+import { ShowContentOptions } from "./ShowContentOptions";
 import { ShowGenresYear } from "./ShowGenresYear";
 import { ShowPlayButton } from "./ShowPlayButton";
 import { ShowSeasons } from "./ShowSeasons";
@@ -21,33 +22,36 @@ export const ShowContent = ({
 }: IShowContentProps) => {
   return (
     <article className="absolute bottom-0 left-0 right-0 p-8 animate-fade-in">
-      <section className="max-w-7xl mx-auto space-y-4">
-        <header className="space-y-4">
-          <h1 className="text-5xl font-bold tracking-tight text-title">
-            {title}
-          </h1>
-          <ShowGenresYear genres={genres} year={year} />
-        </header>
+      <section className="max-w-7xl mx-auto flex flex-row flex-wrap gap-4 items-end justify-between">
+        <div className="space-y-4">
+          <header className="space-y-4">
+            <h1 className="text-5xl font-bold tracking-tight text-title">
+              {title}
+            </h1>
+            <ShowGenresYear genres={genres} year={year} />
+          </header>
 
-        <p className="max-w-2xl text-title/90 leading-relaxed">{synopsis}</p>
+          <p className="max-w-2xl text-title/90 leading-relaxed">{synopsis}</p>
 
-        <section>
-          <p className="text-description">
-            <strong className="text-title">Elenco: </strong>
-            {cast?.map((member, index) => (
-              <span
-                key={member.ID}
-                className="hover:text-white text-description transition-discrete duration-300 cursor-default"
-              >
-                {member.Name}
-                {index < cast.length - 1 && ", "}
-              </span>
-            ))}
-          </p>
-        </section>
+          <section>
+            <p className="text-description">
+              <strong className="text-title">Elenco: </strong>
+              {cast?.map((member, index) => (
+                <span
+                  key={member.ID}
+                  className="hover:text-white text-description transition-discrete duration-300 cursor-default"
+                >
+                  {member.Name}
+                  {index < cast.length - 1 && ", "}
+                </span>
+              ))}
+            </p>
+          </section>
 
-        <ShowPlayButton />
-        <ShowSeasons />
+          <ShowPlayButton />
+          <ShowSeasons />
+        </div>
+        <ShowContentOptions />
       </section>
     </article>
   );

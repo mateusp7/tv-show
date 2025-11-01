@@ -34,7 +34,7 @@ export const EpisodeItem = ({
     <Dialog>
       <DialogTrigger asChild>
         <li
-          className="flex flex-row cursor-pointer items-center justify-between bg-dark-one py-4 px-6 rounded-md border-2 border-dark-three hover:bg-dark-two transition-discrete duration-300 hover:border-principal group focus-visible:outline-none focus-visible:border-principal"
+          className="flex flex-row cursor-pointer items-center justify-between bg-dark-one py-4 px-6 rounded-md border-2 border-dark-three hover:bg-dark-two transition-discrete duration-300 hover:border-principal group focus-visible:outline-none focus-visible:border-principal min-h-[8.75rem]"
           role="button"
           tabIndex={0}
         >
@@ -45,7 +45,7 @@ export const EpisodeItem = ({
               className="rounded-full bg-linear-to-br from-gradient-1 to-gradient-2 via-gradient-3 hover:shadow-glow transition-smooth focus-visible:outline-none focus-visible:scale-105 focus-visible:outline-gradient-2 hover:scale-105 transition-all duration-300"
               aria-label={`Iniciar episódio ${episodeNumber} - ${title}`}
             >
-              <PlayIcon className="text-white fill-white" />
+              <PlayIcon className="text-white fill-white" size={16} />
             </Button>
             <div className="flex flex-col">
               <p className="text-white/60 font-medium">
