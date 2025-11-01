@@ -14,10 +14,8 @@ export const ShowEpisodes = async ({ seasonNumber }: IShowEpisodesProps) => {
     (episode) => episode.SeasonNumber === seasonNumber
   );
 
-  console.log({ episodesBySeasonSelected });
-
   return (
-    <section className="max-w-7xl mx-auto pb-8 pt-2 text-white">
+    <section className="max-w-7xl mx-auto pb-8 pt-2 text-white px-8 md:px-0">
       <ul className="space-y-3">
         {episodesBySeasonSelected.map((episode) => (
           <EpisodeItem

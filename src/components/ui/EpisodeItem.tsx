@@ -63,7 +63,7 @@ export const EpisodeItem = ({
             </div>
           </div>
 
-          <div className="shrink-0 w-32 h-20 rounded-md overflow-hidden">
+          <div className="shrink-0 w-32 h-20 rounded-md overflow-hidden hidden md:block">
             <Image
               src={image}
               alt="Video background"
@@ -76,8 +76,8 @@ export const EpisodeItem = ({
       </DialogTrigger>
       <DialogContent className="bg-dark-two border-dark-three border-2 text-title max-w-2xl">
         <DialogHeader>
-          <DialogTitle className="text-xl">{title}</DialogTitle>
-          <DialogDescription>
+          <DialogTitle className="text-xl text-left">{title}</DialogTitle>
+          <DialogDescription className="text-left">
             Episódio {episodeNumber} • {duration} min
           </DialogDescription>
           <Image
@@ -89,7 +89,9 @@ export const EpisodeItem = ({
             width={1920}
             height={75}
           />
-          <p className="text-sm text-description leading-relaxed">{synopsis}</p>
+          <p className="text-sm text-description leading-relaxed my-4 text-left">
+            {synopsis}
+          </p>
 
           <DialogClose asChild>
             <Button
