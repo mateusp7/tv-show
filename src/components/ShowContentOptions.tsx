@@ -9,6 +9,7 @@ export const ShowContentOptions = () => {
           size={20}
           className="group-hover:text-principal transition-all duration-300"
         />
+        
       </ButtonTooltip>
       <ButtonTooltip tooltipContent="Gostei">
         <ThumbsUpIcon
