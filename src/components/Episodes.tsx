@@ -8,8 +8,8 @@ const container = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.1, // tempo entre cada item
-      delayChildren: 0.1, // atraso inicial
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
     },
   },
 };

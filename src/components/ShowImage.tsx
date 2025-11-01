@@ -12,7 +12,8 @@ export const ShowImage = ({ image }: IShowImageProps) => {
       className="h-full w-full object-cover object-top opacity-50"
       fetchPriority="high"
       priority
-      fill
+      width={1920}
+      height={1080}
     />
   );
 };
