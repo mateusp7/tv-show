@@ -1,7 +1,8 @@
 import { Episode } from "@/entities/episode.type";
 import env from "@/env";
+import { cache } from "react";
 
-export default async function getEpisodes() {
+const getEpisodes = cache(async () => {
   const response = await fetch(
     `${env.NEXT_PUBLIC_API_URL}/episodes/SHOW123.json`,
     {
@@ -19,4 +20,6 @@ export default async function getEpisodes() {
   return {
     episodes: data,
   };
-}
+});
+
+export default getEpisodes;
