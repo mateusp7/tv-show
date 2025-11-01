@@ -1,8 +1,9 @@
+import env from "@/env";
 import { Show } from "../entities/show.type";
 
 export default async function getShow() {
   const response = await fetch(
-    `https://agile-releases.s3.us-east-1.amazonaws.com/tests/tv-shows/SHOW123.json`,
+    `${env.NEXT_PUBLIC_API_URL}/tv-shows/SHOW123.json`,
     {
       cache: "force-cache",
       next: { revalidate: 60 * 60 * 24 },

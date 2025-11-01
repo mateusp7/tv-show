@@ -1,8 +1,9 @@
 import { Episode } from "@/entities/episode.type";
+import env from "@/env";
 
 export default async function getEpisodes() {
   const response = await fetch(
-    `https://agile-releases.s3.us-east-1.amazonaws.com/tests/episodes/SHOW123.json`,
+    `${env.NEXT_PUBLIC_API_URL}/episodes/SHOW123.json`,
     {
       cache: "force-cache",
       next: { revalidate: 60 * 60 * 24 },
