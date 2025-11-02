@@ -7,7 +7,7 @@ interface IShowGenresYearProps {
 
 export const ShowGenresYear = ({ genres, year }: IShowGenresYearProps) => {
   return (
-    <ul className="flex flex-row items-center">
+    <ul className="flex flex-row items-center" data-testid="show-genresyear-content">
       {genres?.map((genre, index) => (
         <li key={genre.ID} className="text-description uppercase font-medium">
           {genre.Title}
