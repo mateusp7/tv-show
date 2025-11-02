@@ -8,7 +8,7 @@ export const ShowImage = ({ image }: IShowImageProps) => {
   return (
     <Image
       src={image}
-      alt="Video background"
+      alt="Imagem da série"
       className="h-full w-full object-cover object-top opacity-50"
       fetchPriority="high"
       priority
