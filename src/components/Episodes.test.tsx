@@ -51,4 +51,12 @@ describe("<Episodes />", () => {
 
     expect(episodeItem).toHaveLength(3);
   });
+
+  it("should show empty list of episodes", () => {
+    render(<Episodes episodes={[]} />);
+
+    const emptyMessage = screen.getByTestId("show-episodes-empty");
+
+    expect(emptyMessage).toBeInTheDocument();
+  });
 });

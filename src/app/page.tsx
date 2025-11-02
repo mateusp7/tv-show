@@ -13,6 +13,8 @@ export default async function Home({
   const { show } = await getShow();
   const { season } = await searchParams;
 
+  console.log({ season });
+
   return (
     <main className="min-h-screen bg-dark-one">
       <div className="relative h-[60vh] w-full overflow-hidden">
@@ -28,7 +30,7 @@ export default async function Home({
           cast={show.Cast}
         />
       </div>
-      <ShowEpisodes seasonNumber={Number(season)} />
+      <ShowEpisodes seasonNumber={season ? Number(season) : 1} />
     </main>
   );
 }
