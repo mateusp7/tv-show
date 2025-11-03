@@ -65,7 +65,7 @@ pnpm test
 ### ☁️ Deployment
 
 You can preview the project at:
-👉 []
+👉 [https://tv-show-seven-hazel.vercel.app/]
 
 ### 💬 Author
 
