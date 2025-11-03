@@ -3,11 +3,11 @@ on:
   pull_request: [develop]
   push:
     branches: [main]
-env:
-  NEXT_PUBLIC_API_URL: https://agile-releases.s3.us-east-1.amazonaws.com/tests
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL }}
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
