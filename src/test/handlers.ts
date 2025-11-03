@@ -1,7 +1,6 @@
-// src/test/handlers.ts
 import { http, HttpResponse } from "msw";
 
-const BASE = "https://agile-releases.s3.us-east-1.amazonaws.com/tests";
+const BASE = process.env.NEXT_PUBLIC_API_URL;
 
 export const handlers = [
   http.get(`${BASE}/episodes/SHOW123.json`, () => {
