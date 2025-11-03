@@ -72,4 +72,4 @@ You can preview the project at:
 Mateus Paulo
 Frontend Developer — React / Next.js / TypeScript / Node.JS <br />
 📧 [mateuspaulo1337@gmail.com] <br />
-🌐 [[LinkedIn](https://www.linkedin.com/in/mateus-paulo-51aa9521a/)]# Trigger
+🌐 [[LinkedIn](https://www.linkedin.com/in/mateus-paulo-51aa9521a/)]
