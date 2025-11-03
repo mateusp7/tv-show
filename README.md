@@ -22,18 +22,12 @@ The page should fill the entire screen, fetch data from the provided APIs, and a
 
 | Layer  | Technology          | Description                     |
 |------------|--------------------|---------------------------------|
-| Framework  | React (with Vite)  | Fast dev environment and modular architecture |
+| Framework  | NextJs  | Fast dev environment and modular architecture |
 | Language   | Typescript         | Type-safe, maintainable code     |
 | Styling     | Tailwind CSS        | Framwork CSS utility-first |
 | Fonts     | Nunito        |  |
 | Testing     | Vitest + React Testing Library + MSW        | Unit and integration tests with API mocking |
 | Deployment     | Vercel        | Cloud-based hosting as requested |
-
-### 📂 Organization goals:
-
-- Separation of concerns (pages, components, hooks, services).
-- CSS and logic encapsulated by feature.
-- Easy navigation and testing.
 
 ### ⚙️ Installation & Usage
 
@@ -59,7 +53,7 @@ pnpm dev
 4. Build for production
 
 ```bash
-pnpm build && pnpm preview
+pnpm build && pnpm start
 ```
 
 5. Run tests

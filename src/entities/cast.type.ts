@@ -1,4 +1,4 @@
 export type Cast = {
-  Id: string
+  ID: string
   Name: string
 }
