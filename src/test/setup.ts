@@ -3,16 +3,8 @@ import { cleanup } from "@testing-library/react";
 import { afterAll, afterEach, beforeAll } from "vitest";
 import { server } from "./server";
 
-process.env.NEXT_PUBLIC_API_URL = "https://agile-releases.s3.us-east-1.amazonaws.com/tests";
-
-beforeAll(() => server.listen({ onUnhandledRequest: "error" }));
-
-afterEach(() => {
-  server.resetHandlers();
-  cleanup();
-});
-
-afterAll(() => server.close());
+process.env.NEXT_PUBLIC_API_URL =
+  "https://agile-releases.s3.us-east-1.amazonaws.com/tests";
 class ResizeObserverMock {
   observe() {}
   unobserve() {}
@@ -20,3 +12,7 @@ class ResizeObserverMock {
 }
 
 global.ResizeObserver = ResizeObserverMock;
+
+beforeAll(() => server.listen({ onUnhandledRequest: "error" }));
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
