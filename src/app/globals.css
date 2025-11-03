@@ -45,9 +45,9 @@
 
 @theme {
   --color-principal: oklch(0.742 0.153 164.99);
-  --color-gradient1: oklch(0.6447 0.1051 284.98);
-  --color-gradient2: oklch(0.7175 0.1088 193.47);
-  --color-gradient3: oklch(0.7459 0.1786 153.55);
+  --color-gradient-1: oklch(0.6447 0.1051 284.98);
+  --color-gradient-2: oklch(0.7175 0.1088 193.47);
+  --color-gradient-3: oklch(0.7459 0.1786 153.55);
   --color-title: oklch(0.9672 0 0);
   --color-description: oklch(0.7692 0.0145 248.02);
   --color-dark-one: oklch(0.1149 0 0);

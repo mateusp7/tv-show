@@ -1,0 +1,1 @@
+export const PARAM_SEASON_NAME = "season";
