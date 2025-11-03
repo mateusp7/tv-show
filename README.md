@@ -29,6 +29,38 @@ The page should fill the entire screen, fetch data from the provided APIs, and a
 | Testing     | Vitest + React Testing Library + MSW        | Unit and integration tests with API mocking |
 | Deployment     | Vercel        | Cloud-based hosting as requested |
 
+### ⚙️ Continuous Integration & Continuous Deployment (CI/CD)
+
+This project uses a complete CI/CD pipeline combining GitHub Actions and Vercel to ensure code quality, reliability, and automated delivery.
+
+### 🧩 Continuous Integration (CI)
+
+Every commit and pull request triggers a GitHub Actions workflow that:
+
+1. Installs dependencies using pnpm install.
+2. Runs automated tests with Vitest to validate core logic and components.
+3. Builds the project to ensure the application compiles successfully.
+
+If any of these steps fail, the workflow blocks merging to the main branch.
+This guarantees that only tested and validated code reaches production.
+
+### 🚀 Continuous Deployment (CD)
+
+Once the CI pipeline passes successfully and the code is merged into main,
+Vercel automatically deploys the latest version of the application.
+
+- ✅ Automatic builds and previews for each pull request
+- 🚀 Production deployment triggered by merges to main
+- 🔒 Environment variables managed securely through GitHub and Vercel
+
+### 🔒 Branch Protection Rules
+
+To maintain code integrity, the main branch is protected with the following rule:
+
+- Require pull request before merging — direct pushes to main are blocked.
+
+This setup ensures every update is reviewed, tested, and deployed automatically.
+
 ### ⚙️ Installation & Usage
 
 1. Clone the repo
