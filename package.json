@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "test": "vitest",
+    "test:ci": "vitest run --reporter=dot",
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
