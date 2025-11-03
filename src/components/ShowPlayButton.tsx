@@ -11,11 +11,8 @@ export const ShowPlayButton = () => {
   const currentSeason = searchParams.get(PARAM_SEASON_NAME) ?? "1";
 
   return (
-    <Button
-      size="lg"
-      className="shadow-[0_0_5px_2px_rgb(21,201,147)] font-bold"
-    >
-      <PlayIcon className="size-5 fill-white" />
+    <Button size="lg" className="font-bold">
+      <PlayIcon className="size-5 fill-white font-bold" />
       Assistir Temporada {currentSeason}
     </Button>
   );

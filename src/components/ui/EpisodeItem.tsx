@@ -106,10 +106,7 @@ export const EpisodeItem = ({
           </p>
 
           <DialogClose asChild>
-            <Button
-              size="lg"
-              className="shadow-[0_0_5px_2px_rgb(21,201,147)] font-bold"
-            >
+            <Button size="lg" className="font-bold">
               <PlayIcon className="size-5 fill-white" />
               Assistir Episódio {episodeNumber}
             </Button>

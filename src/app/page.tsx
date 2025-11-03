@@ -2,8 +2,37 @@ import { ShowContent } from "@/components/ShowContent";
 import { ShowEpisodes } from "@/components/ShowEpisodes";
 import getShow from "@/services/getShow";
 import { ShowImage } from "../components/ShowImage";
+import { Metadata } from "next";
 
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
+
+export async function generateMetadata(): Promise<Metadata> {
+  const { show } = await getShow();
+
+  return {
+    title: show.Title,
+    description: show.Synopsis,
+    openGraph: {
+      title: show.Title,
+      description: show.Synopsis,
+      images: [
+        {
+          url: show?.Images?.Background,
+          width: 1200,
+          height: 630,
+          alt: show.Title,
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: show.Title,
+      description: show.Synopsis,
+      images: [show?.Images?.Background],
+    },
+  };
+}
 
 export default async function Home({
   searchParams,
