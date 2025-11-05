@@ -14,6 +14,8 @@ export const ShowImage = ({ image }: IShowImageProps) => {
       priority
       width={1920}
       height={1080}
+      sizes="100vw"
+      quality={85}
     />
   );
 };

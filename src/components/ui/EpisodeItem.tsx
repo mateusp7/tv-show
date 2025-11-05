@@ -9,7 +9,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/Dialog";
-import { motion } from "framer-motion";
 import { PlayIcon } from "lucide-react";
 import Image from "next/image";
 import { Button } from "./Button";
@@ -23,15 +22,6 @@ export interface IEpisodeItemProps {
   synopsis: string;
 }
 
-const item = {
-  hidden: { opacity: 0, x: -10 },
-  show: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.4 },
-  },
-};
-
 export const EpisodeItem = ({
   title,
   episodeNumber,
@@ -43,11 +33,8 @@ export const EpisodeItem = ({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <motion.li
-          variants={item}
-          className="flex flex-row cursor-pointer items-center justify-between bg-dark-one py-4 px-6 rounded-md border-2 border-dark-three hover:bg-dark-two transition-discrete duration-300 hover:border-principal group focus-visible:outline-none focus-visible:border-principal min-h-35"
-          role="button"
-          tabIndex={0}
+        <li
+          className="flex flex-row cursor-pointer items-center justify-between bg-dark-one py-4 px-6 rounded-md border-2 border-dark-three hover:bg-dark-two transition-discrete hover:border-principal group focus-visible:outline-none focus-visible:border-principal min-h-35 animate-fade-in-left transition-all duration-300"
           data-testid="elementItem"
         >
           <div className="flex flex-row items-start gap-4">
@@ -82,9 +69,11 @@ export const EpisodeItem = ({
               className="h-full w-full object-cover object-center opacity-60 group-hover:opacity-100 transition-opacity duration-300"
               width={128}
               height={80}
+              sizes="128px"
+              quality={75}
             />
           </div>
-        </motion.li>
+        </li>
       </DialogTrigger>
       <DialogContent className="bg-dark-two border-dark-three border-2 text-title max-w-2xl">
         <DialogHeader>
@@ -97,9 +86,10 @@ export const EpisodeItem = ({
             src={image}
             alt={`Imagem do episódio ${title}`}
             loading="lazy"
-            quality={100}
+            quality={85}
             width={1920}
-            height={75}
+            height={1080}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 672px"
           />
           <p className="text-sm text-description leading-relaxed my-4 text-left">
             {synopsis}
