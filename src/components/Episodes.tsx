@@ -1,5 +1,3 @@
-"use client";
-
 import { Episode } from "@/entities/episode.type";
 import { ClapperboardIcon } from "lucide-react";
 import { EpisodeItem } from "./ui/EpisodeItem";
